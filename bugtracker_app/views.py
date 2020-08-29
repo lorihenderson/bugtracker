@@ -52,7 +52,6 @@ def ticket_detail_view(request, ticket_id):
     return render(request, "ticket_detail.html", {"my_ticket": my_ticket})
 
 
-
 def login_view(request):
     if request.method == "POST":
         form = LoginForm(request.POST)

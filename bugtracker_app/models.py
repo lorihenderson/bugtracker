@@ -20,3 +20,6 @@ class Ticket(models.Model):
     ticket_status = models.CharField(choices=TICKET_STATUS, max_length=7, default="New")
     user_assigned_to_ticket = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name="user_assigned_to_ticket", blank=True, null=True)
     user_completed_ticket = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name="user_completed_ticket", blank=True, null=True)
+
+    def __str__(self):
+        return self.title
