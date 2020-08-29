@@ -1,0 +1,8 @@
+<h3>New Ticket Info</h3>
+    <div id="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add Ticket" />
+        </form>
+    </div>

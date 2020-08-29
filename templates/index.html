@@ -1,0 +1,51 @@
+<h1>Welcome {{ user }}!</h1>
+
+<!--Get the user to Submit a Ticket then Login then take User to Submit a Ticket.-->
+<h4>Bugs, Bugs, Bugs Galore!</h4>
+<a href="/addticket/"><button type="button">Submit a Ticket</button></a>
+
+<a href="/logout/"><button type="button">Logout</button></a>
+<hr>
+<h2>Status: New</h2>
+{% for ticket in tickets %}
+    {% if ticket.ticket_status == "New" %}
+        <h3>Title: <a href="/ticket/{{ticket.id}}/">{{ ticket.title }}</a></h3>
+        <h4>User Assigned: {{ ticket.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ ticket.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ ticket.ticket_author }}</h4>
+        <br>
+    {% endif %}
+{% endfor %}
+<hr>
+<h2>Status: In Progress</h2>
+{% for ticket in tickets %}
+    {% if ticket.ticket_status == "IP" %}
+        <h3>Title: <a href="/ticket/{{ticket.id}}/">{{ ticket.title }}</a></h3>
+        <h4>User Assigned: {{ ticket.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ ticket.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ ticket.ticket_author }}</h4>
+        <br>
+    {% endif %}
+{% endfor %}
+<hr>
+<h2>Status: Done</h2>
+{% for ticket in tickets %}
+    {% if ticket.ticket_status == "Done" %}
+        <h3>Title: <a href="/ticket/{{ticket.id}}/">{{ ticket.title }}</a></h3>
+        <h4>User Assigned: {{ ticket.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ ticket.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ ticket.ticket_author }}</h4>
+        <br>
+    {% endif %}
+{% endfor %}
+<hr>
+<h2>Status: Invalid</h2>
+{% for ticket in tickets %}
+    {% if ticket.ticket_status == "Invalid" %}
+        <h3>Title: <a href="/ticket/{{ticket.id}}/">{{ ticket.title }}</a></h3>
+        <h4>User Assigned: {{ ticket.user_assigned_to_ticket }}</h4>
+        <h4>User who Filed: {{ ticket.ticket_author }}</h4>
+        <br>
+    {% endif %}
+{% endfor %}
+<hr>

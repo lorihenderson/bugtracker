@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Status: New</h2>
+        {% for my_user in user_ticket %}
+        {% if my_user.ticket_status == "New" %}
+        <h3>Title: {{ my_user.title }}</h3>
+        <h4>Time Filed: {{ my_user.time_date }}</h4>
+        <h4>User Assigned: {{ my_user.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ my_user.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ my_user.ticket_author }}</h4>
+        {% endif %}
+        {% endfor %}
+        <br>
+        <hr>
+    <h2>Status: In Progress</h2>
+        {% for my_user in user_ticket %}
+        {% if my_user.ticket_status == "IP" %}
+        <h3>Title: {{ my_user.title }}</h3>
+        <h4>Time Filed: {{ my_user.time_date }}</h4>
+        <h4>User Assigned: {{ my_user.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ my_user.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ my_user.ticket_author }}</h4>
+        {% endif %}
+        {% endfor %}
+        <br>
+        <hr>
+    <h2>Status: Done</h2>
+        {% for my_user in user_ticket %}
+        {% if my_user.ticket_status == "Done" %}
+        <h3>Title: {{ my_user.title }}</h3>
+        <h4>Time Filed: {{ my_user.time_date }}</h4>
+        <h4>User Assigned: {{ my_user.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ my_user.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ my_user.ticket_author }}</h4>
+        {% endif %}
+        {% endfor %}
+        <br>
+        <hr>
+    <h2>Status: Invalid</h2>
+    {% for my_user in user_ticket %}
+        {% if my_user.ticket_status == "Invalid" %}
+        <h3>Title: {{ my_user.title }}</h3>
+        <h4>Time Filed: {{ my_user.time_date }}</h4>
+        <h4>User Assigned: {{ my_user.user_assigned_to_ticket }}</h4>
+        <h4>Completed By: {{ my_user.user_completed_ticket }}</h4>
+        <h4>User who Filed: {{ my_user.ticket_author }}</h4>
+        {% endif %}
+        {% endfor %}
+</div>
